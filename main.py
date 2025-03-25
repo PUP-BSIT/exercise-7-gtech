@@ -1,15 +1,29 @@
-def add_products():
-    # TODO (Adriel Dimayuga):
-    # Add a function that allows the user to input the following:
-    # - Product Name
-    # - Price
-    # - Quantity
-    pass
+# Add list for each product detail
+name_list = []
+price_list = []
+quantity_list = []
+total_list = []
 
-def user_choice():
+def add_product():
+    print("\n---*--- ADD PRODUCT ---*---")
+    # Input product details
+    product_name = input("Product Name: ")
+    price = float(input("Price: "))
+    quantity = int(input("Quantity: "))
+    # Compute for the total cost for each product
+    total = price * quantity 
+    # Append each values to their corresponding list
+    name_list.append(product_name) 
+    price_list.append(price)
+    quantity_list.append(quantity)
+    total_list.append(total)
+
+def ask_to_add_product():
     # TODO (Grace Lim): 
-    # loop the function "add_products", ask the user if it wants to add 
-    # another product using y (yes) or n (no)
+    # ask the user if it wants to add another product 
+    # using y (yes) or n (no)
+    # if "y", call the "add_product" function
+    # if "n", end the loop
     pass
 
 def senior_discount():
@@ -28,7 +42,8 @@ def print_receipt():
     pass
 
 # TODO (Rain Romero):
-# Add a code that will allow the user to input Customer Name and Senior ID (Optional).
+# Add a code that will allow the user to input 
+# Customer Name and Senior ID (Optional).
 # Use "senior_deduction" function to compute for the grand total
 
 # TODO (Grace Lim):
