@@ -19,7 +19,8 @@ def add_product():
     total_list.append(total)
 
 def ask_to_add_product():
-    while True:
+    user_choice = 'y'
+    while user_choice == 'y':
         # Call add_product function to add a product
         add_product()
         # Ask the user if they want to add another product
@@ -29,9 +30,6 @@ def ask_to_add_product():
         while user_choice not in ['y', 'n']:
             user_choice = input("Invalid input. Please enter 'y' to add "
                                 "another product or 'n' to proceed: ").lower()
-        # Exit in the loop when 'n' is entered
-        if user_choice == 'n':
-            break
 
 def senior_discount(subtotal, senior_id):
     # Check if senior ID is provided
@@ -70,16 +68,13 @@ def print_receipt(customer_name, senior_id, grand_total):
 
 # Call function ask_to_add_product
 ask_to_add_product()
-
 print("\n---*--- CUSTOMER INFORMATION ---*---")
 # Input customer name and senior ID (leave blank if N/A)
 customer_name = input("Enter Customer Name: ") 
 senior_id = input("Enter Senior ID (blank if not senior citizen): ")
 # Calculate subtotal and apply senior discount if applicable
 subtotal = sum(total_list)
-
 # Compute grand total applying senior discount if applicable
 grand_total = senior_discount(subtotal, senior_id)
-
 # Print the final receipt
 print_receipt(customer_name, senior_id, grand_total)
