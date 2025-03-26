@@ -71,6 +71,7 @@ ask_to_add_product()
 print("\n---*--- CUSTOMER INFORMATION ---*---")
 # Input customer name and senior ID (leave blank if N/A)
 customer_name = input("Enter Customer Name: ") 
+# TODO (Althea Aragon): Add error handling for senior ID. Accept numbers only.
 senior_id = input("Enter Senior ID (blank if not senior citizen): ")
 # Calculate subtotal and apply senior discount if applicable
 subtotal = sum(total_list)
