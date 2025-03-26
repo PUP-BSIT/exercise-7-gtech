@@ -42,14 +42,31 @@ def senior_discount(subtotal, senior_id):
     # Return the full subtotal if no senior ID is provided
     return subtotal
 
-def print_receipt():
-    # TODO (Hoshea Lopez, Grace Lim):
-    # Add a function that displays:
-    # - Items (product name, price, quantity, total)
-    # - Customer Name
-    # - Senior ID no.
-    # - Grand Total
-    pass
+def print_receipt(customer_name, senior_id, grand_total):
+    # Print the receipt header
+    print("\n----*---*---*---* RECEIPT *---*---*---*----")
+    print("------------------------------------------")
+    # Print the table headers for the items
+    print(f"{'Item':<15}{'Price':<10}{'Qty':<10}{'Total':<10}")
+    print("------------------------------------------")
+
+    # Loop through each product in the lists and print details
+    for product_index in range(len(name_list)):
+        # Item name 
+        print(f"{name_list[product_index]:<15}" 
+             # Item price formatted to 2 decimal places
+             f"{price_list[product_index]:<10.2f}" 
+             # Quantity of items
+             f"{quantity_list[product_index]:<10}"
+             # Total cost formatted to 2 decimal places
+             f"{total_list[product_index]:<10.2f}")
+         
+    print("------------------------------------------")
+    # Print customer details and grand total
+    print(f"Customer Name: {customer_name}")
+    print(f"Senior ID No.: {senior_id}")
+    print(f"Grand Total: {grand_total:.2f}")
+    print("------------------------------------------")
 
 # TODO (Rain Romero):
 # Add a code that will allow the user to input 
