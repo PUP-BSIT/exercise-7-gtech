@@ -33,11 +33,14 @@ def ask_to_add_product():
         if user_choice == 'n':
             break
 
-def senior_discount():
-    # TODO (Althea Aragon):
-    # Add a function that deducts 10% of the grand total of the products
-    # if the user has typed in a Senior ID no.
-    pass
+def senior_discount(subtotal, senior_id):
+    # Check if senior ID is provided
+    if senior_id != "":
+        # Calculate 10% discount and apply to subtotal
+        discount = subtotal * 0.10 
+        return subtotal - discount 
+    # Return the full subtotal if no senior ID is provided
+    return subtotal
 
 def print_receipt():
     # TODO (Hoshea Lopez, Grace Lim):
