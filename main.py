@@ -68,10 +68,15 @@ def print_receipt(customer_name, senior_id, grand_total):
     print(f"Grand Total: {grand_total:.2f}")
     print("------------------------------------------")
 
-# TODO (Rain Romero):
-# Add a code that will allow the user to input 
-# Customer Name and Senior ID (Optional).
-# Use "senior_deduction" function to compute for the grand total
+# Call function ask_to_add_product
+ask_to_add_product()
+
+print("\n---*--- CUSTOMER INFORMATION ---*---")
+# Input customer name and senior ID (leave blank if N/A)
+customer_name = input("Enter Customer Name: ") 
+senior_id = input("Enter Senior ID (blank if not senior citizen): ")
+# Calculate subtotal and apply senior discount if applicable
+subtotal = sum(total_list)
 
 # TODO (Grace Lim):
 # Compute the grand total outside of the function for direct computation
