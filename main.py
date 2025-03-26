@@ -19,12 +19,19 @@ def add_product():
     total_list.append(total)
 
 def ask_to_add_product():
-    # TODO (Grace Lim): 
-    # ask the user if it wants to add another product 
-    # using y (yes) or n (no)
-    # if "y", call the "add_product" function
-    # if "n", end the loop
-    pass
+    while True:
+        # Call add_product function to add a product
+        add_product()
+        # Ask the user if they want to add another product
+        user_choice = input("\nWould you like to add another product?"
+                            " (y/n): ").lower()   
+        # Validate input to ensure it is either 'y' or 'n'
+        while user_choice not in ['y', 'n']:
+            user_choice = input("Invalid input. Please enter 'y' to add "
+                                "another product or 'n' to proceed: ").lower()
+        # Exit in the loop when 'n' is entered
+        if user_choice == 'n':
+            break
 
 def senior_discount():
     # TODO (Althea Aragon):
