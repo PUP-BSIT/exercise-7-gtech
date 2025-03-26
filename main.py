@@ -30,8 +30,18 @@ def ask_to_add_product():
         while user_choice not in ['y', 'n']:
             user_choice = input("Invalid input. Please enter 'y' to add "
                                 "another product or 'n' to proceed: ").lower()
+            
+def get_valid_senior_id():
+     while True:
+        # Prompt the user for senior ID input
+        senior_id = input("Enter Senior ID (blank if not senior citizen): ")
+        # Validate the inputted senior ID 
+        if senior_id == "" or senior_id.isdigit():
+            return senior_id
+        # Display an error message if input is invalid
+        print("Invalid input. Senior ID must be a number.")
 
-def senior_discount(subtotal, senior_id):
+def get_senior_discount(subtotal, senior_id):
     # Check if senior ID is provided
     if senior_id != "":
         # Calculate 10% discount and apply to subtotal
@@ -71,11 +81,10 @@ ask_to_add_product()
 print("\n---*--- CUSTOMER INFORMATION ---*---")
 # Input customer name and senior ID (leave blank if N/A)
 customer_name = input("Enter Customer Name: ") 
-# TODO (Althea Aragon): Add error handling for senior ID. Accept numbers only.
-senior_id = input("Enter Senior ID (blank if not senior citizen): ")
+senior_id = get_valid_senior_id()
 # Calculate subtotal and apply senior discount if applicable
 subtotal = sum(total_list)
 # Compute grand total applying senior discount if applicable
-grand_total = senior_discount(subtotal, senior_id)
+grand_total = get_senior_discount(subtotal, senior_id)
 # Print the final receipt
 print_receipt(customer_name, senior_id, grand_total)
