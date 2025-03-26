@@ -78,8 +78,8 @@ senior_id = input("Enter Senior ID (blank if not senior citizen): ")
 # Calculate subtotal and apply senior discount if applicable
 subtotal = sum(total_list)
 
-# TODO (Grace Lim):
-# Compute the grand total outside of the function for direct computation
+# Compute grand total applying senior discount if applicable
+grand_total = senior_discount(subtotal, senior_id)
 
 # TODO (Rain Romero):
 # call the "print_receipt" function as final output
