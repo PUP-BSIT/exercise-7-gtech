@@ -81,5 +81,5 @@ subtotal = sum(total_list)
 # Compute grand total applying senior discount if applicable
 grand_total = senior_discount(subtotal, senior_id)
 
-# TODO (Rain Romero):
-# call the "print_receipt" function as final output
+# Print the final receipt
+print_receipt(customer_name, senior_id, grand_total)
